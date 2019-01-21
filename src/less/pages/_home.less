@@ -1,0 +1,81 @@
+.services-row {
+  .row-flex();
+
+  .service {
+    .col();
+    .size(10);
+    .size-sm(4);
+
+    border: 1px solid @border-color;
+    .primary-borders();
+    padding-bottom: 50px;
+    position: relative;
+    margin: 20px auto;
+
+    &-text {
+      padding: 20px 30px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px 50px 0px 0px;
+    }
+
+    strong {
+      position: relative;
+    }
+
+    .line {
+      margin: 10px 0;
+      height: 2px;
+      width: 100%;
+      background-color: @border-color;
+    }
+
+    .list {
+      margin-top: 20px;
+      li {
+        margin: 10px 0;
+      }
+      a {
+        color: @gray;
+        font-size: 1.6rem;
+      }
+    }
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        color: @black;
+      }
+    }
+
+    .all-list {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: @gray-light;
+
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 10px);
+
+      &:after {
+        content: url("../img/icons/arrow-down.png");
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+strong {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+}

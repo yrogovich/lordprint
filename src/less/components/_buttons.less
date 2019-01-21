@@ -1,0 +1,106 @@
+.call-btn {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: @primary-deep;
+
+  width: 21.5rem;
+
+  border-radius: 50px;
+  border: 1px solid @primary;
+  background-color: transparent;
+  padding: 4px;
+
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  img {
+    box-sizing: border-box;
+    border-radius: inherit;
+    background-color:  @primary;
+    //width: 5.0rem;
+    padding: 15px;
+    margin-right: 17px;
+  }
+
+  &:hover {
+    background-color: @primary;
+    color: @white;
+    img {
+      background-color: @primary-deep;
+    }
+  }
+  &:active {
+    color: @black;
+  }
+  //&:focus {
+  //  border-color: @primary-light;
+  //}
+  transition: .3s;
+}
+
+.header-btn {
+  border: 1px solid @primary-light;
+  border-radius: 50px;
+
+  background-color: @primary;
+  box-shadow: 0px 10px 30px 0px rgba(32, 150, 186, 0.75);
+
+  height: 70px;
+  padding: 20px 90px 20px 45px;
+  margin: 10px;
+
+  color: @white;
+  font-size: 1.8rem;
+  .sourceSansPro();
+  position: relative;
+
+  .circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color:  @primary-light;
+    width: 70px;
+    height: 100%;
+    border-radius: inherit;
+
+    color:  #377091;
+    font-size: 14px;
+    .sale {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+
+  &:hover {
+    .circle {
+      color: @white;
+    }
+  }
+  &:active {
+    color: @black;
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0px 10px 30px 0px rgba(32, 150, 186, 0.75);
+      background: @primary;
+    }
+    25% {
+      box-shadow: 0px 5px 10px 0px rgba(32, 150, 186, 0.75);
+      background: @primary-deep;
+    }
+    100% {
+      ox-shadow: 0px 10px 30px 0px rgba(32, 150, 186, 0.75);
+      background: @primary;
+    }
+  }
+
+  animation: glow 4s ease-in-out infinite;
+  transition: .4s;
+}
