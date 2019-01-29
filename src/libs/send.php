@@ -10,9 +10,20 @@ $message = '
 				if(isset($_POST['user_name']) && $_POST['user_name'] !== '')
 					$message .= '<p>Имя: '.$_POST['user_name'].'</p>';   
 				if(isset($_POST['user_phone']) && $_POST['user_phone'] !== '')
-					$message .= '<p>Телефон: '.$_POST['user_phone'].'</p>';   
-				if(isset($_POST['user_email']) && $_POST['user_email'] !== '')
-					$message .= '<p>Email: '.$_POST['user_email'].'</p>';     
+					$message .= '<p>Телефон: '.$_POST['user_phone'].'</p>';
+
+                if(isset($_POST['checkbox']) && $_POST['checkbox'] !== '') {
+                    $checkboxArr = $_POST['checkbox'];
+                    foreach ($checkboxArr as $value) {
+                        $message .= '<p>Checkbox: '.$value.'</p>';
+                    }
+                }
+                if(isset($_POST['textarea']) && $_POST['textarea'] !== '') {
+                    $textareaArr = $_POST['textarea'];
+                    foreach ($textareaArr as $value) {
+                        $message .= '<p>Checkbox: '.$value.'</p>';
+                    }
+                }
 $message .= '                 
             </body>
         </html>'; //Текст нащего сообщения можно использовать HTML теги

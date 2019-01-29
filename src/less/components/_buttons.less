@@ -13,6 +13,7 @@
 
   line-height: 1.8rem;
   font-size: 1.4rem;
+  margin: 5px 0;
   img {
     box-sizing: border-box;
     border-radius: inherit;
@@ -45,25 +46,28 @@
   background-color: @primary;
   box-shadow: 0px 10px 30px 0px rgba(32, 150, 186, 0.75);
 
-  height: 70px;
-  padding: 20px 90px 20px 45px;
+  //height: 70px;
+  padding: 22px 80px 22px 25px;
+  .md(padding, 22px 90px 22px 45px);
   margin: 10px;
 
   color: @white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  .md(font-size, 1.8rem);
+
   .sourceSansPro();
   position: relative;
 
   .circle {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -1px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background-color:  @primary-light;
+    background-color: @primary-light;
     width: 70px;
     height: 100%;
     border-radius: inherit;
@@ -103,4 +107,16 @@
 
   animation: glow 4s ease-in-out infinite;
   transition: .4s;
+}
+
+#to-top {
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  opacity: .5;
+  &:hover {
+    opacity: .8;
+  }
 }

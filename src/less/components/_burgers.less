@@ -1,0 +1,55 @@
+/* menuToggle */
+.menuToggle{
+  width: 35px;
+  height: 21px;
+  margin: 10px 0 5px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  .sm(display, none);
+}
+.menuToggle span{
+  background-color:#FFF;
+  position: absolute;
+  border-radius: 2px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  width:100%;
+  height: 3px;
+}
+.menuToggle span:nth-child(1){
+  top: 0px;
+  left: 0px;
+}
+.menuToggle span:nth-child(2){
+  top: 9px;
+  left: 0px;
+}
+.menuToggle span:nth-child(3){
+  bottom:0px;
+  left: 0px;
+}
+.menuToggle:not(.clickmenuToggle):hover span:nth-child(1){
+  transform:  scaleY(1.2);
+  left: -5px;
+}
+.menuToggle:not(.clickmenuToggle):hover span:nth-child(2){
+  transform: rotate(5deg) scaleY(1.1);
+}
+.menuToggle:not(.clickmenuToggle):hover span:nth-child(3){
+  transform:  scaleY(1.2);
+  left: 5px;
+}
+.clickmenuToggle span:nth-child(1){
+  transform: rotate(45deg) scaleX(0.7);
+  top: 13PX;
+  left: -8px;
+}
+.clickmenuToggle span:nth-child(2){
+  transform: scale(0);
+  transition-duration: 50ms
+}
+.clickmenuToggle span:nth-child(3){
+  transform: rotate(-45deg) scaleX(0.7);
+  top: 13PX;
+  left: 7px;
+}

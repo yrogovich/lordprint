@@ -1,22 +1,107 @@
 h1, .h1 {
-  font-size: 3.6rem!important;
-  color: @white!important;
-  text-transform: none!important;
+  .headers-style();
 
-  padding-top: 75px;
-  margin-bottom: 50px;
+  font-size: 2.6rem;
+  .md(font-size, 3.6rem);
+  color: @white!important;
+  text-transform: none;
+  text-transform: none;
+
+  padding-top: 40px;
+  .md(padding-top, 75px);
 }
 
 h2, .h2 {
-  .alice();
+  .headers-style();
   color: @black;
   font-size: 3.2rem;
-  font-weight: 400;
-  text-align: center;
+  text-transform: uppercase;
+}
+
+.h2-style-2 {
+  .alice();
   text-transform: uppercase;
   position: relative;
+  text-align: center;
+  margin-bottom: 10px;
 
+  span {
+    display: block;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: @gray;
+    .sourceSansPro();
+  }
+  h2 {
+    margin-bottom: 10px;
+    &:before,
+    &:after {
+      content: '';
+      .sm-block({
+        content: url("../img/flow-alone.png");
+        position: relative!important;
+        bottom: 10px;
+        transform: translate(0, -50%);
+      }) ;
+
+    }
+    &:before {
+      left: -50px;
+    }
+    &:after {
+      right: -50px;
+    }
+  }
+}
+
+.h2-style-3 {
+  text-transform: none;
+  margin-bottom: 20px;
+  color: @primary;
+  &:before,
+  &:after {
+    content: '';
+  }
+}
+
+.h2-style-4 {
+  font-size: 3.6rem;
+  text-align: left;
+  text-transform: none;
+  margin-bottom: 35px;
+  position: relative;
+  &:before {
+    content: '';
+    content: url("../img/flow-alone.png");
+    position: absolute!important;
+    left: 0;
+    bottom: -30px;
+    transform: translate(0);
+  }
+}
+
+h3, .h3 {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  .alice();
+}
+
+.headers-style() {
+  font-weight: 400;
+  text-align: center;
+  position: relative;
   margin-bottom: 50px;
+
   &:before {
     content: url("../img/flow.png");
     position: absolute;

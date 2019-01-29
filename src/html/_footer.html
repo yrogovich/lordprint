@@ -1,28 +1,64 @@
 	<!-- Footer area -->
 	<footer>
 		<div class="wrapper">
-			
+			<div class="footer-row">
+                <div class="col-1">
+                    <strong class="company-name">
+                        ООО "Лорд"
+                    </strong>
+                    <p>
+                        Комплексные решения по производству
+                        и печати текстильной продукции
+                    </p>
+                </div>
+                <div class="col-2">
+                    <span class="map">Москва, 4-й проезд Подбельского, д.3, к.8</span>
+                    <span class="clock">Время работы: Пн-Пт 9ч-18ч</span>
+                    <a class="mail">info@ad-vert.ru</a>
+                </div>
+                <div class="col-3">
+                    <a href="tel:+79262191753" class="phone">8 (926) 219-17-53</a>
+                    <a href="tel:+74952874519" class="phone">8 (495) 287-45-19</a>
+                </div>
+                <div class="col-4">
+                    <div class="social-link">
+                        <a href="#"><img src="img/icons/social/telegram.png" alt="telegram"></a>
+                    </div>
+                    <div class="social-link">
+                        <a href="#"><img src="img/icons/social/whatsapp.png" alt="whatsapp"></a>
+                    </div>
+                    <div class="social-link">
+                        <a href="#"><img src="img/icons/social/viber.png" alt="viber"></a>
+                    </div>
+                </div>
+            </div>
+			<div class="footer-end">
+				<div class="pair">
+					<span>ИНН 7718742700</span>
+					<span>КПП 7718742700</span>
+				</div>
+				<a href="#">Политика конфиденциальности</a>
+			</div>
 		</div>
 	</footer>
 
-	<!---------------------------------------------------------->
 	<!-- Modal HTML embedded directly into document -->
-	<div id="modal-1" class="modal">
-		<div class="wrapper">
-			<div class="modal-title">
-			</div>
-			<div class="modal-head">
-				<form action="javascript:void(null);" onsubmit="callForm1()" method="POST" id="form-1">
-					<input type="text" name="user_name" placeholder="Ваше имя" required>
-					<input type="number" name="user_phone" placeholder="Ваш телефон" >
-					<input type="email" name="user_email" placeholder="Ваш E-mail" >
-					<button class="modal-button" type="submit">Отправить</button>
-				</form>
-			</div>
-		</div>
-	</div>
+    <div id="modal-1" class="modal">
+        <div class="wrapper">
+            <div class="modal-title">
+            </div>
+            <div class="modal-head">
+                <form action="javascript:void(null);" onsubmit="call()" method="POST" id="form-1">
+                    <h2>Заказать обратный звонок:</h2>
+                    <input type="text" name="user_name" placeholder="Ваше имя" required>
+                    <input type="number" name="user_phone" placeholder="Ваш телефон" >
+                    <!--<input type="email" name="user_email" placeholder="Ваш E-mail" >-->
+                    <button class="modal-button" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-	<!---------------------------------------------------------->
 	<!-- JQuery -->
 	<script
 		src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -36,14 +72,45 @@
 				<!-- Alternative JQuery modal -->
 				<!-- <script src="libs/jquery.modal.min.js"></script>
 				<link  href="libs/jquery.modal.min.css" rel="stylesheet">  -->
-	<!-- FontAwesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<!-- Slick slider -->
-  <link  href="libs/slick.css" rel="stylesheet">
-	<link  href="libs/slick-theme.css" rel="stylesheet">
-	<script src="libs/slick.min.js"></script>
+
 	<!-- Main script -->
 	<script src="js/main.min.js"></script>
+    <script>
+        // Action form onSubmit
+        function call() {
+            var msg = $(this).serialize();
+            //var msg = $(form-id).serialize();
+            $.ajax({
+                type: 'POST',
+                url: './libs/send.php',
+                data: msg,
+                success: function(data) {
+                    alert('Всё круто!');
+                },
+                error:  function(xhr, str){
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                }
+            });
+        }
+    </script>
+    <script>
+        // Action form onSubmit
+        function sendQuiz() {
+            var msg = $(this).serialize();
+            //var msg = $(form-id).serialize();
+            $.ajax({
+                type: 'POST',
+                url: './libs/send.php',
+                data: msg,
+                success: function(data) {
+                    alert('Всё круто!');
+                },
+                error:  function(xhr, str){
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                }
+            });
+        }
+    </script>
 
-</body>
+    </body>
 </html>
