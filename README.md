@@ -1,2 +1,2 @@
 # Gulp-template
-# Build - https://yrogovich.github.io/lordprint/build
+Build - https://yrogovich.github.io/lordprint/build
