@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    $('.lazy').Lazy();
+
+
     $('.left-side').css("background-image", "url(img/quiz/img-1.jpg)");
 
 

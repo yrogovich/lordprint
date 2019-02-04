@@ -280,15 +280,18 @@ strong {
 
 .merch-section {
   position: relative;
+  text-align: center;
 }
 
 .subscript {
-  position: absolute;
-  top: 50%;
-  right: -90px;
   color: @gray-light;
-  transform: rotate(-90deg);
 
+  .md-block({
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    transform: rotate(-90deg);
+  });
 }
 
 .section-quiz {
@@ -339,7 +342,8 @@ strong {
   .iframe {
     position: relative;
     max-width: @video-max-width;
-    margin: auto;
+    margin-left: -10px;
+    .sm(margin, auto);
 
     .iframe-ratio {
       height: 0;
