@@ -1600,7 +1600,7 @@ label:before {
 
 .modal input {
   display: block;
-  min-width: 300px;
+  max-width: 100%;
   margin: 20px auto;
   font-size: 1.8rem;
   border-radius: 10px;
@@ -2209,6 +2209,10 @@ strong {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .modal input {
+    min-width: 300px;
   }
 
   .services-row .service {
